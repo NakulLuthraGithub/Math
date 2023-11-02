@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shotcut icon" href="assests/MATHS.jpg" type="x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Symbols | Maths | Innocent Hearts School</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <div class="logo">
+                <img src="assests/MATHS.jpg" alt="LOGO">
+            </div>
+            <div class="Class">
+                <ul>
+                    <li><a onclick="toggleMenu()">Classes</a></li>
+                </ul>
+            </div>
+            <div class="sub-menu-wrap" id="SubMenu">
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="#" onclick="toggleMenu()"> 6th</a></li>
+                        <li><a href="#" onclick="toggleMenu()"> 7th</a></li>
+                        <li><a href="#" onclick="toggleMenu()"> 8th</a></li>
+                        <li><a href="#" onclick="toggleMenu()"> 9th</a></li>
+                        <li><a href="#" onclick="toggleMenu()"> 10th</a></li>
+                        <li><a href="#" onclick="toggleMenu()"> 11th</a></li>
+                        <li><a href="#" onclick="toggleMenu()"> 12th</a></li>
+                        <p>Under Development</p>
+                    </ul>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#Symbols">Symbols</a></li>
+                <li><a onclick="toggleCalc()">Calculator</a></li>
+                
+                
+                <li><a href="#Contact">Contact Us</a></li>
+            </ul>
+            <div class="search">
+                <span><ion-icon name="search-sharp"></ion-icon></span>
+                <input class="input-text" type="text" onfocus="this.value = ''" placeholder="Search.." id="SearchBox">
+            </div>
+
+
+        </nav>
+    </header>
+    <div class="calc-container" id="Calc">
+        <div class="calc-wrap">
+            <form>
+                <div class="close" onclick="toggleCalc()">
+                    <span><ion-icon name="close-outline"></ion-icon></span>
+                </div>
+                <div class="display">
+                    <input type="text" value="" readonly name="display" class="display-inp" id="display">
+                </div>
+                <div>
+                    <input type="button" class="oper" value="AC" onclick="display.value = '' ">
+                    <input type="button" class="oper" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">                            
+                    <input type="button" class="oper" value="." onclick="display.value += '.' ">
+                    <input type="button" class="oper" value="÷" onclick="display.value += '/' ">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="display.value += '7'">
+                    <input type="button" value="8" onclick="display.value += '8' ">
+                    <input type="button" value="9" onclick="display.value += '9' ">
+                    <input type="button" class="oper" value="x" onclick="display.value += '*' ">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="display.value += '4' ">
+                    <input type="button" value="5" onclick="display.value += '5' ">
+                    <input type="button" value="6" onclick="display.value += '6' ">
+                    <input type="button" class="oper" value="-" onclick="display.value += '-' ">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="display.value += '1' ">
+                    <input type="button" value="2" onclick="display.value += '2' ">
+                    <input type="button" value="3" onclick="display.value += '3' ">
+                    <input type="button" class="oper" value="+" onclick="display.value += '+' ">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="display.value += '00' ">
+                    <input type="button" value="0" onclick="display.value += '0' ">
+                    <input class="equal oper" type="button" value="=" onclick="display.value = eval(display.value)">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="img-land">
+        <div class="overlay"></div>
+        <div class="moving">
+            <h1>Maths Is <span class="auto-type"></span></h1>
+        </div>
+        <img src="assests/Maths.png" alt="Maths Is Fun TBH" class="landscape">
+    </div>
+    <div class="copy-bg" id="CopyBg">
+        <div class="copy-wrap" id="Copy-wrap">
+            <input type="text" readonly value="Copied Symbol Successfully!!">
+            <div class="btn-ok">
+                <button onclick="DisplayOk()">Ok</button>
+            </div>
+        </div>
+    </div>
+    <div class="about" id="About">
+        <img src="assests/MATHS.jpg" alt="LOGO">
+        <div class="text-about">
+            <h1>About Website</h1>
+            <p>This Is a Website Developed By Students Of Innocent Hearts School. This Website is Developed for helping
+                the Teachers of Our School in making The Maths / Science Assignment Easily. This Website Consists Of
+                Many Unknown / Rare Symbols That were hard to Write on Mobile / PC Keyboards. This Website Also
+                Contains as Additional Calculator That Can Help You too. This Website Contains a Section To select
+                Classes And The Symbols Will be Sorted According To the Desired Class. For Any Suggestions / Bugs /
+                Issues / Feedback, Contact Us Below. Thanks For Visiting Our Website.</p>
+        </div>
+    </div>
+    
+    <div class="section-symbol" id="Symbols">
+        <p>Most Used Symbols</p>
+        <div class="symbols-flex">
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product6.png" alt="Symbol">
+                </div>
+                <p>Plus</p>
+                <button onclick="copyPlus()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product1.png" alt="Symbol">
+                </div>
+                <p>Equals</p>
+                <button onclick="copyEquals()">Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product7.png" alt="Symbol">
+                </div>
+                <p>Subtract</p>
+                <button onclick="copySubtract()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product2.png" alt="Symbol">
+                </div>
+                <p>Not Equals</p>
+                <button onclick="copyNotEquals()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols last">
+                <div class="img-symbol">
+                    <img src="assests/product10.png" alt="Symbol">
+                </div>
+                <p>Divide</p>
+                <button onclick="copyDivide()" >Copy To Clipboard</button>
+            </section>
+        </div>
+    </div>
+    <div class="section-symbol">
+        <p>Other Common Symbols</p>
+        <div class="symbols-flex">
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product8.png" alt="Symbol">
+                </div>
+                <p>Multiply</p>
+                <button onclick="copyMultiply()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product13.png" alt="Symbol">
+                </div>
+                <p>Square Root</p>
+                <button onclick="copySquareRoot()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product14.png" alt="Symbol">
+                </div>
+                <p>Cube Root</p>
+                <button onclick="copyCubeRoot()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product17.png" alt="Symbol">
+                </div>
+                <p>Percentage</p>
+                <button onclick="copyPercentage()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols last">
+                <div class="img-symbol">
+                    <img src="assests/product19.png" alt="Symbol">
+                </div>
+                <p>Angle</p>
+                <button onclick="copyAngle()" >Copy To Clipboard</button>
+            </section>
+        </div>
+    </div>
+    <div class="section-symbol">
+        <p>Uncommon Symbols</p>
+        <div class="symbols-flex">
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product3.png" alt="Symbol">
+                </div>
+                <p>Approximation</p>
+                <button onclick="copyApproximation()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product12.png" alt="Symbol">
+                </div>
+                <p>Caret</p>
+                <button onclick="copyCaret()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product18.png" alt="Symbol">
+                </div>
+                <p>Per-Mille</p>
+                <button onclick="copyPerMille()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product20.png" alt="Symbol">
+                </div>
+                <p>Right Angle</p>
+                <button onclick="copyRightAngle()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols last">
+                <div class="img-symbol">
+                    <img src="assests/product22.png" alt="Symbol">
+                </div>
+                <p>Perpendicular</p>
+                <button onclick="copyPerpendicular()" >Copy To Clipboard</button>
+            </section>
+        </div>
+    </div>
+    <div class="section-symbol">
+        <p>Rare Symbols</p>
+        <div class="symbols-flex">
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product15.png" alt="Symbol">
+                </div>
+                <p>4th Root</p>
+                <button onclick="copy4thRoot()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product23.png" alt="Symbol">
+                </div>
+                <p>Parallel</p>
+                <button onclick="copyParallel()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product24.png" alt="Symbol">
+                </div>
+                <p>Congruent</p>
+                <button onclick="copyCongruent()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product26.png" alt="Symbol">
+                </div>
+                <p>Triangle</p>
+                <button onclick="copyTriangle()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols last">
+                <div class="img-symbol">
+                    <img src="assests/product27.png" alt="Symbol">
+                </div>
+                <p>Pi</p>
+                <button onclick="copyPi()" >Copy To Clipboard</button>
+            </section>
+        </div>
+    </div>
+    <div class="section-symbol">
+        <p>Some More Symbols</p>
+        <div class="symbols-flex">
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product33.png" alt="Symbol">
+                </div>
+                <p>Infinity</p>
+                <button onclick="copyInfinity()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product34.png" alt="Symbol">
+                </div>
+                <p>Sigma</p>
+                <button onclick="copySigma()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product39.png" alt="Symbol">
+                </div>
+                <p>Determinant</p>
+                <button onclick="copyDeterminant()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product40.png" alt="Symbol">
+                </div>
+                <p>Therefore</p>
+                <button onclick="copyTherefore()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols last">
+                <div class="img-symbol">
+                    <img src="assests/product41.png" alt="Symbol">
+                </div>
+                <p>Because</p>
+                <button onclick="copyBecause()" >Copy To Clipboard</button>
+            </section>
+        </div>
+    </div>
+    <div class="section-symbol">
+        <p>Unknown Symbols</p>
+        <div class="symbols-flex">
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product43.png" alt="Symbol">
+                </div>
+                <p>There Exists</p>
+                <button onclick="copyThereExists()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product44.png" alt="Symbol">
+                </div>
+                <p>Not Exists</p>
+                <button onclick="copyThereNotExists()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product42.png" alt="Symbol">
+                </div>
+                <p>Integral</p>
+                <button onclick="copyIntegral()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols">
+                <div class="img-symbol">
+                    <img src="assests/product36.png" alt="Symbol">
+                </div>
+                <p>Empty Set</p>
+                <button onclick="copyEmptySet()" >Copy To Clipboard</button>
+            </section>
+            <section class="symbols last">
+                <div class="img-symbol">
+                    <img src="assests/product30.png" alt="Symbol">
+                </div>
+                <p>Equivalence</p>
+                <button onclick="copyEquivalence()" >Copy To Clipboard</button>
+            </section>
+        </div>
+    </div>
+    <hr class="contact-hr">
+    <div class="contact" id="Contact">
+        <div class="contact-wrap">
+            <h1>Contact Us</h1>
+            <p>For Any Feedback Or Issue, Contact Us.</p>
+            <p>Mobile Number:- 7719421910</p>
+            <div class="inputs">
+                <div class="input-section">
+                    <p>Email :</p>
+                    <input type="email" id="reset-this1">
+                </div>
+                <div class="input-section">
+                    <p>Mobile :</p>
+                    <input type="text" id="reset-this2">
+                </div>
+                <div class="input-section">
+                    <p>Highlight of Issue :</p>
+                    <input type="text" id="reset-this3">
+                </div>
+                <div class="input-section">
+                    <p>Your Feedback :</p>
+                    <input type="text" id="reset-this4">
+                </div>
+
+                <button onclick="ResetForm()" class="Submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    <hr class="contact-hr">
+    <div class="Copyright">
+        <p>CopyRight &copy; | 2024 - 2023 | Innocent Hearts School</p>
+    </div>
+    <div class="input-hidden">
+        <input type="text" id="Copy-this">
+    </div>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["Key To Universe.", "About Understanding.", "So Much FUN!!"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        })
+    </script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="js/script.js"></script>
+</html>
